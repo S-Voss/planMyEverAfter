@@ -2,38 +2,39 @@
 
 module.exports = function(sequelize, DataTypes) {
   var Checklist = sequelize.define("Checklist", { 
-    budget_set = {
+    budget_set : {
       type: DataTypes.BOOLEAN
     },
-    guest_list = {
+    guest_list : {
       type: DataTypes.BOOLEAN
     },
-    planner = {
+    planner : {
       type: DataTypes.BOOLEAN
     },
-    book_venue = {
+    book_venue : {
       type: DataTypes.BOOLEAN
     },
-    hire_officiant = {
+    hire_officiant : {
       type: DataTypes.BOOLEAN
     },
-    hire_florist = {
+    hire_florist : {
       type: DataTypes.BOOLEAN
     },
-    hire_photographer = {
+    hire_photographer : {
       type: DataTypes.BOOLEAN
     },
-    hire_entertainment = {
+    hire_entertainment : {
       type: DataTypes.BOOLEAN
     },
-    hire_catering = {
+    hire_catering : {
       type: DataTypes.BOOLEAN
     },
-    hire_transportation = {
+    hire_transportation : {
       type: DataTypes.BOOLEAN
     },
-    hire_hotel = {
+    hire_hotel : {
       type: DataTypes.BOOLEAN
     },
   });
+  return Checklist;
 };

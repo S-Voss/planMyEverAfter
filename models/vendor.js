@@ -63,7 +63,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     min: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: false,
       unique: false,
       validate: {
@@ -71,7 +71,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     rating: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: true,
       unique: false,
       validate: {
@@ -88,4 +88,5 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+  return Vendor;
 };
