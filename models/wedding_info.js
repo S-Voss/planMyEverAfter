@@ -21,67 +21,31 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     wedding_venue: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Vendor',
-        key: 'id'
-      }
+      type: DataTypes.INTEGER
     },
     wedding_officiant: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: 'Vendor',
-      key: 'id'
-    }
+    type: DataTypes.INTEGER
     },
     wedding_florist: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Vendor',
-        key: 'id'
-      }
+      type: DataTypes.INTEGER
     },
     wedding_photo: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Vendor',
-        key: 'id'
-      }
+      type: DataTypes.INTEGER
     },
     wedding_ent: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Vendor',
-        key: 'id'
-      }
+      type: DataTypes.INTEGER
     },
     wedding_catering: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Vendor',
-        key: 'id'
-      }
+      type: DataTypes.INTEGER
     },
     wedding_misc: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Vendor',
-        key: 'id'
-      }
+      type: DataTypes.INTEGER
     },
     wedding_transportation: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Vendor',
-        key: 'id'
-      }
+      type: DataTypes.INTEGER
     },
     wedding_hotel: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Vendor',
-        key: 'id'
-      }
+      type: DataTypes.INTEGER
     },
   });
   return WeddingInfo;
