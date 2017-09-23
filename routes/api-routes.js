@@ -1,9 +1,10 @@
+
+// requires the models for accessing the database
 var db = require("../models");
 var Client = require("../models/clients.js");
 var Wedding = require("../models/wedding_info.js");
 
 module.exports = function(app) {
-  
     // GET route for getting all of the posts
     app.get("/api/posts/", function(req, res) {
       db.Post.findAll({})
@@ -86,4 +87,3 @@ module.exports = function(app) {
       });
     });
   };
-  
