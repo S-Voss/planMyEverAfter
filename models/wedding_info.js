@@ -5,11 +5,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     max_price: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     num_of_guests: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     zip: {
@@ -18,72 +18,73 @@ module.exports = function(sequelize, DataTypes) {
       unique: false,
       validate: {
         len: [5]
-      },
+      }
+    },
     wedding_venue: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       references: {
-        model: Vendor,
+        model: 'Vendor',
         key: 'id'
       }
     },
     wedding_officiant: {
-    type: DataTypes.INT,
+    type: DataTypes.INTEGER,
     references: {
-      model: Vendor,
+      model: 'Vendor',
       key: 'id'
     }
     },
     wedding_florist: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       references: {
-        model: Vendor,
+        model: 'Vendor',
         key: 'id'
       }
     },
     wedding_photo: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       references: {
-        model: Vendor,
+        model: 'Vendor',
         key: 'id'
       }
     },
     wedding_ent: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       references: {
-        model: Vendor,
+        model: 'Vendor',
         key: 'id'
       }
     },
     wedding_catering: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       references: {
-        model: Vendor,
+        model: 'Vendor',
         key: 'id'
       }
     },
     wedding_misc: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       references: {
-        model: Vendor,
+        model: 'Vendor',
         key: 'id'
       }
     },
     wedding_transportation: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       references: {
-        model: Vendor,
+        model: 'Vendor',
         key: 'id'
       }
     },
     wedding_hotel: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       references: {
-        model: Vendor,
+        model: 'Vendor',
         key: 'id'
       }
     },
-    }
   });
+  return WeddingInfo;
 };
 
 // Goal is to have a list of ID's for each vendor the clients have chosen for their wedding
