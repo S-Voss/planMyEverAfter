@@ -1,14 +1,20 @@
 module.exports = function(sequelize, DataTypes) {
   var Vendor = sequelize.define("Vendor", { 
+    vendor_ID: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      unique: true
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: false,
     },
     category: {
-      type: DataTypes.ENUM('venue', 'officiant', 'florist', 'photographer', 'entertainment', 'catering', 'misc', 'transportation', 'hotel'),
+      type: DataTypes.ENUM('venue', 'officiant', 'florist', 'photographer', 'entertainment', 'catering','transportation', 'hotel', 'misc'),
       allowNull: false,
-      unique: true
+      unique: false,
     },
     address1: {
       type: DataTypes.STRING,
@@ -86,7 +92,20 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         isIn: [[true, false]]
       }
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      field: 'createdAt',
+      defaultValue: sequelize.literal('NOW()')
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      field: 'updatedAt',
+      defaultValue: sequelize.literal('NOW()')
     }
+  }, 
+  {
+    timestamps: true
   });
   return Vendor;
 };

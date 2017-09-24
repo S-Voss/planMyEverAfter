@@ -20,6 +20,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [5]
       }
     },
+    // these integers should match the vendor_ID from the vendors table
     wedding_venue: {
       type: DataTypes.INTEGER
     },
@@ -48,9 +49,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER
     },
   });
+
+  WeddingInfo.associate = function(models) {
+    WeddingInfo.belongsTo(models.Clients, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  }
+
   return WeddingInfo;
 };
-
-// Goal is to have a list of ID's for each vendor the clients have chosen for their wedding
-// the id's should reference back to the vendor table
-// 'venue', 'officiant', 'florist', 'photographer', 'entertainment', 'catering', 'misc', 'transportation', 'hotel'

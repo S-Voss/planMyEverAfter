@@ -40,7 +40,7 @@ module.exports = function(app) {
  app.post("/api/newClient", function(req, res){
         var client = req.body;
 
-        Client.create({
+        Clients.create({
             spouse1_first: client.spouse1_first,
             spouse1_last: client.spouse1_last,
             spouse2_first: client.spouse2_first,
@@ -53,7 +53,7 @@ module.exports = function(app) {
     app.post("/api/weddingInfo", function(req, res){
         var info = req.body;
 
-        Wedding.create({
+        WeddingInfo.create({
             max_price: info.maxBudget,
             date: info.date,
             zip: info.email,
