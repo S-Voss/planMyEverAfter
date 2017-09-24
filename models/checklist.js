@@ -36,5 +36,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN
     },
   });
+
+  Checklist.associate = function(models) {
+    Checklist.belongsTo(models.Clients, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  }
+  
   return Checklist;
 };
