@@ -28,6 +28,7 @@ CREATE TABLE vendors (
    email VARCHAR(45) NULL,
    phone VARCHAR(45) NULL,
    min_cost int(6),
+   website VARCHAR(45),
    rating int(1) -- range of 1-5  
    available BOOLEAN,
    PRIMARY KEY (id)
@@ -44,7 +45,7 @@ CREATE TABLE wedding_info (
    wedding_officiant VARCHAR(45),
    wedding_florist VARCHAR(45),
    wedding_photo VARCHAR(45),
-   wedding_entertainment VARCHAR(45),
+   wedding_ent VARCHAR(45),
    wedding_catering VARCHAR(45),
    wedding_transportation VARCHAR(45),
    wedding_hotel VARCHAR(45),
@@ -54,7 +55,7 @@ CREATE TABLE wedding_info (
    
 -- checklist for the client to use
 CREATE TABLE checklist (
-   id INT NOT NULL AUTO_INCREMENT,
+   vendor_ID INT NOT NULL,
    budget BOOLEAN,
    guest_list BOOLEAN,
    planner BOOLEAN,
@@ -65,7 +66,7 @@ CREATE TABLE checklist (
    hire_catering BOOLEAN,
    hire_transportation BOOLEAN,
    hire_hotel BOOLEAN,
-   PRIMARY KEY (id)
+   PRIMARY KEY (vendor_ID)
 );
 
 CREATE TABLE passwords (
