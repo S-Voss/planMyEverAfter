@@ -13,7 +13,7 @@
 [Heroku](https://www.heroku.com/)
 
 ## Back-end JS Libraries
-Node <br>
-Express <br>
-Sequelize <br>
-Body-parser <br>
+[Node](https://nodejs.org/en/) <br>
+[Express](http://expressjs.com/) <br>
+[Sequelize](http://docs.sequelizejs.com/) <br>
+[Body-parser](https://www.npmjs.com/package/body-parser) <br>
