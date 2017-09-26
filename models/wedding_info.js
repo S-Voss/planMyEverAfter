@@ -51,6 +51,8 @@ module.exports = function(sequelize, DataTypes) {
     },
   });
 
+  // foreign key association
+  // each Client has a WeddingInfo
   WeddingInfo.associate = function(models) {
     WeddingInfo.belongsTo(models.Clients, {
       foreignKey: {

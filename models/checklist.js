@@ -48,6 +48,8 @@ module.exports = function(sequelize, DataTypes) {
     },
   });
 
+  // foreign key association
+  // each Client has a Checklist
   Checklist.associate = function(models) {
     Checklist.belongsTo(models.Clients, {
       foreignKey: {
