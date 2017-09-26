@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
-  var coupleId = 1; //placeholder for starter couple
+  var couplesId = 1; //placeholder for starter couple
 
-  happyCouple(coupleId);
+  happyCouple(couplesId);
 
   function happyCouple(couplesId){
     $.get("/api/clients/" + couplesId, function(data) {
@@ -31,6 +31,50 @@ $(document).ready(function(){
         $(".wedding-budget").text(budget);       
       }
     })
-  }
+
+    $.get("/api/planner/" + couplesId, function(data) {
+      console.log(data.hire_florist);
+      if(!data) {
+        //TODO: redirect to a 404 page
+        alert("Client not found.");
+      } else {
+        if (data.hire_florist) {
+          $('#chk-florist').attr('checked', true);
+        } else {
+          $('#chk-florist').attr('checked', false);
+        }
+        if (data.budget) {
+          $('#chk-max-price').prop('checked', true);
+        } else {
+          $('#chk-max-price').prop('checked', false);
+        }
+        if (data.hire_officiant) {
+          $('#chk-officiant').prop('checked', true);
+        } else {
+          $('#chk-officiant').prop('checked', false);
+        }
+        if (data.hire_entertainment) {
+          $('#chk-entertainment').prop('checked', true);
+        } else {
+          $('#chk-entertainment').prop('checked', false);
+        }
+        if (data.hire_catering) {
+          $('#chk-catering').prop('checked', true);
+        } else {
+          $('#chk-catering').prop('checked', false);
+        }
+        if (data.hire_transportation) {
+          $('#chk-transportation').prop('checked', true);
+        } else {
+          $('#chk-transportation').prop('checked', false);
+        }
+        if (data.book_venue) {
+          $('#chk-venue').prop('checked', true);
+        } else {
+          $('#chk-venue').prop('checked', false);
+        }
+      }
+    })
+  }  //end happyCouple function
 
 });

@@ -34,6 +34,16 @@ module.exports = function(app) {
       });
     });
 
+    app.get("/api/planner/:id", function(req, res) {
+      db.Checklist.findOne({
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(function(dbStuff) {
+        res.json(dbStuff);
+      });
+    });
 
   
     // Get rotue for retrieving a single post
@@ -67,6 +77,9 @@ module.exports = function(app) {
                 zip: client.zip,
                 num_of_guests: client.numGuest,
                 ClientId: dbStuff.dataValues.id
+            });
+            db.Checklist.create({
+              ClientId: dbStuff.dataValues.id
             })
         });
     });
