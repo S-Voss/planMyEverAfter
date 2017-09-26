@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-  var WeddingInfo = sequelize.define("Wedding", {
+  var WeddingInfo = sequelize.define("WeddingInfo", {
+    
     date: {
       type: DataTypes.DATE,
       allowNull: false
