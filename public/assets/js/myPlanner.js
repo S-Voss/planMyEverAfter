@@ -33,15 +33,16 @@ $(document).ready(function(){
     })
 
     $.get("/api/planner/" + couplesId, function(data) {
-      console.log(data.hire_florist);
       if(!data) {
         //TODO: redirect to a 404 page
         alert("Client not found.");
       } else {
         if (data.hire_florist) {
-          $('#chk-florist').attr('checked', true);
+          console.log(data.hire_florist);
+          $('#chk-florist').prop('checked', true);
+          console.log("Something magical with the code should happen here...");
         } else {
-          $('#chk-florist').attr('checked', false);
+          $('#chk-florist').prop('checked', false);
         }
         if (data.budget) {
           $('#chk-max-price').prop('checked', true);
